@@ -5,6 +5,7 @@ import { EmpComponent } from '../emp/emp.component';
 import { HomeComponent } from '../home/home.component';
 import { Tab } from '../tab.model';
 import { TabService } from '../tab.service';
+import { TemplateformsComponent } from '../templateforms/templateforms.component';
 
 @Component({
   selector: 'app-layout',
@@ -47,6 +48,11 @@ export class LayoutComponent implements OnInit {
     else if (Componentname === "account") {
       this.tabService.addTab(
         new Tab(AccountDetailsComponent, "Account Data", { parent: "LayoutComponent" })
+      );
+    }
+    else if (Componentname === "templateforms") {
+      this.tabService.addTab(
+        new Tab(TemplateformsComponent, "Template forms", { parent: "LayoutComponent" })
       );
     }
   }

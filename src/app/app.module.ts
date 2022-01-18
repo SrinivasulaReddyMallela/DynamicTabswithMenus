@@ -20,6 +20,7 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
 import { TabService } from './tab.service';
 import { TabContentComponent } from './tab-content.component';
 import { ContentContainerDirective } from './content-container.directive';
+import { TemplateformsComponent } from './templateforms/templateforms.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ContentContainerDirective } from './content-container.directive';
     AccountDetailsComponent,
     AccountUpdateComponent,
     TabContentComponent,
-    ContentContainerDirective
+    ContentContainerDirective,
+    TemplateformsComponent
   ],
   imports: [
     BrowserModule,

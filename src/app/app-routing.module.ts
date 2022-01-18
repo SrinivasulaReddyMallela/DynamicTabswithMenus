@@ -4,39 +4,45 @@ import { AccountDetailsComponent } from './Account/account-details/account-detai
 import { CovidComponent } from './covid/covid.component';
 import { EmpComponent } from './emp/emp.component';
 import { HomeComponent } from './home/home.component';
+import { TemplateformsComponent } from './templateforms/templateforms.component';
 
 const routes: Routes = [
-   { 
-     path:'home',
-     component:HomeComponent
-   },
-   {
-   path: 'emp',
-   children: [
-       { path: '', component: EmpComponent },
-       { path: 'emp', component: EmpComponent }
-   ]
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'emp',
+    children: [
+      { path: '', component: EmpComponent },
+      { path: 'emp', component: EmpComponent }
+    ]
   },
   {
     path: 'covid',
     children: [
-        { path: '', component: CovidComponent },
-        { path: 'covid', component: CovidComponent }
+      { path: '', component: CovidComponent },
+      { path: 'covid', component: CovidComponent }
     ]
-   },
-   {
+  },
+  {
+    path: '  templateforms',
+    component: TemplateformsComponent
+
+  },
+  {
     path: 'account',
     children: [
-        { path: '', component: AccountDetailsComponent },
-        { path: 'Account', component: AccountDetailsComponent }
+      { path: '', component: AccountDetailsComponent },
+      { path: 'Account', component: AccountDetailsComponent }
     ]
-   },
-   {
-       path:'',
-       redirectTo:'/home',
-       pathMatch:'full'
-    }
-   ];
+  },
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

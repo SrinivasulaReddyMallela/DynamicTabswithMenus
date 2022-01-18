@@ -8,7 +8,7 @@
       
         <!-- <button mat-stroked-button (click)="addNewTab('emp')">Add new tab</button> -->
         <mat-tab-group class="main-tab-group mt-2" [selectedIndex]="selectedTab"
-          (selectedTabChange)="tabChanged($event)">
+          (selectedTabChange)="tabChanged($event)" style="margin-top: 1px;">
           <mat-tab *ngFor="let tab of tabs; let tabIndex = index">
             <ng-template mat-tab-label>{{ tab.title }}
               <i class="material-icons" (click)="removeTab(tabIndex)">

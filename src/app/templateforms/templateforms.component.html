@@ -1,0 +1,51 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6">
+            <div id="user-data">
+                <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                    <div class="form-group">
+                        <label for="username">User Name</label>
+                        <input type="text" id="username" name="username" ngModel #username="ngModel"
+                            class="form-control" required/>
+                    </div>
+                    <span class="help-block" *ngIf="!username.valid && username.touched">
+                        Please Enter a valid UserName
+                    </span>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" ngModel #email="ngModel" class="form-control" required email/>
+                    </div>
+                    <span class="help-block" *ngIf="!email.valid && email.touched">
+                        Please Enter a Email
+                    </span>
+                    <div class="form-group">
+                        <label for="username">Secret Question</label>
+                        <select name="secret" id="secret" class="form-control" ngModel required #secret="ngModel">
+                            <option value="pet">Your First Pet</option>
+                            <option value="teacher">Your First Teacher</option>
+                            <option value="school">Your First School</option>
+                            <option value="movie">Your First Movie</option>
+                        </select>
+                    </div>
+                    <span class="help-block" *ngIf="!secret.valid && secret.touched">
+                        Please choose a option
+                    </span>
+                    <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row" *ngIf="submitted">
+        <div class="col-xs-6 col-md-6 col-sm-6" >
+           Entered User Name:  {{username}}
+        </div>
+        <div class="col-xs-6 col-md-6 col-sm-6" >
+            Entered Email :  {{email}}
+         </div>
+         <div class="col-xs-6 col-md-6 col-sm-6" >
+            Selected security question :  {{secret}}
+         </div>
+    </div>
+</div>

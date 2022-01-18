@@ -11,7 +11,9 @@
   font-weight: normal;
   font-style: normal;
 }
-
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
 .component {
   line-height: 1.5em;
   margin: 0 auto;

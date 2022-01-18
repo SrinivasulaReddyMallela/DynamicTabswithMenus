@@ -1,31 +1,45 @@
-<h1>Employees Data from Service</h1>
-<br/>
+<!-- <h1>Employees Data from Service</h1>
+<br /> -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 
-<div style="margin-left: 35%;"> 
-    <label for="Please enter Employee Name">Please enter Employee Name</label> 
-    <input type = "text" [(ngModel)]="selectedEmployee" style="margin-left: 2%;">
+
+<!-- <div style="margin-left: 35%;margin-top: 30px;" class="cont">
+    <label for="Please enter Employee Name">Please enter Employee Name</label>
+    <input type="text" [(ngModel)]="selectedEmployee" style="margin-left: 2%;" matInput>
     <button class="btn btn-default" (click)="filterEmployees()">Search</button>
-    </div>
-<div class="sticky-wrap">
-<table class="sticky-enabled" style="margin: 0px; width: 100%;"> 
-    <thead>
-        <th>ID</th>
-        <th>Employee Name</th>
-        <th>Employee Salary</th>
-        <th>Employee Age</th>
-        <th>Employee Image</th>
-    </thead>
-    <tbody>
-        <ng-container *ngFor="let emp of Employees;let i=index;">
-        <tr>
-            <td>{{i+1}}</td>
-            <td>{{emp.employee_name|titlecase}}</td>
-            <td>{{emp.employee_salary|number:'3.2-3'}}</td>
-            <td>{{emp.employee_age|number:'1.0-0'}}</td>
-            <td>{{emp.profile_image}}</td>
-        </tr>
-    </ng-container>
-    </tbody>
-</table>
-</div>
+</div> -->
 
+<div class="container" style="margin-top: 30px;">
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6">
+            <div class="form-group">
+                <label for="Employee Name">Employee Name</label>
+                <input type="text" [(ngModel)]="selectedEmployee" style="margin-left: 2%;" class="form-control">
+               
+            </div>
+            <button class="btn btn-success" (click)="filterEmployees()">Search</button>
+        </div>>
+    </div>
+</div>
+<div class="sticky-wrap">
+    <table class="sticky-enabled" style="margin: 0px; width: 100%;">
+        <thead>
+            <th>ID</th>
+            <th>Employee Name</th>
+            <th>Employee Salary</th>
+            <th>Employee Age</th>
+            <th>Employee Image</th>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let emp of Employees;let i=index;">
+                <tr>
+                    <td>{{i+1}}</td>
+                    <td>{{emp.employee_name|titlecase}}</td>
+                    <td>{{emp.employee_salary|number:'3.2-3'}}</td>
+                    <td>{{emp.employee_age|number:'1.0-0'}}</td>
+                    <td>{{emp.profile_image}}</td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>
