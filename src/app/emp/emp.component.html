@@ -1,0 +1,31 @@
+<h1>Employees Data from Service</h1>
+<br/>
+
+<div style="margin-left: 35%;"> 
+    <label for="Please enter Employee Name">Please enter Employee Name</label> 
+    <input type = "text" [(ngModel)]="selectedEmployee" style="margin-left: 2%;">
+    <button class="btn btn-default" (click)="filterEmployees()">Search</button>
+    </div>
+<div class="sticky-wrap">
+<table class="sticky-enabled" style="margin: 0px; width: 100%;"> 
+    <thead>
+        <th>ID</th>
+        <th>Employee Name</th>
+        <th>Employee Salary</th>
+        <th>Employee Age</th>
+        <th>Employee Image</th>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let emp of Employees;let i=index;">
+        <tr>
+            <td>{{i+1}}</td>
+            <td>{{emp.employee_name|titlecase}}</td>
+            <td>{{emp.employee_salary|number:'3.2-3'}}</td>
+            <td>{{emp.employee_age|number:'1.0-0'}}</td>
+            <td>{{emp.profile_image}}</td>
+        </tr>
+    </ng-container>
+    </tbody>
+</table>
+</div>
+
