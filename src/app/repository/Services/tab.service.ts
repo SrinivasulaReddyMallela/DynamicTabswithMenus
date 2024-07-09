@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Tab } from "./tab.model";
+import { Tab } from "../../common/Entities/tab.model";
 import { BehaviorSubject } from "rxjs";
 
 @Injectable()

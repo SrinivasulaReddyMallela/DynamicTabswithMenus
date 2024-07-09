@@ -36,7 +36,10 @@
                     <td>{{emp.employee_name|titlecase}}</td>
                     <td>{{emp.employee_salary|number:'3.2-3'}}</td>
                     <td>{{emp.employee_age|number:'1.0-0'}}</td>
-                    <td>{{emp.profile_image}}</td>
+                    <td>
+                        <!-- <img cImg  src="{{emp.profile_image}}"  height="200"></img> -->
+                        {{emp.profile_image}}
+                    </td>
                 </tr>
             </ng-container>
         </tbody>

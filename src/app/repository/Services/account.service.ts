@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { account } from '../Entities/account';
+import { account } from '../../common/Entities/account';
 
 @Injectable({
   providedIn: 'root'

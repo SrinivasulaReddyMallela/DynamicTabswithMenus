@@ -10,8 +10,12 @@ export class EmpService {
 
   constructor(private _httpClient:HttpClient) { }
 
-  public GetEmpData():Observable<any>
+  public GetEmpData()//:Observable<any>
   {
-    return this._httpClient.get(environment.EmpServiceURL+'v1/employees');
+    //return this._httpClient.get(environment.EmpServiceURL+'v1/employees');
+    this._httpClient.get('./emp.json').subscribe((data) => {
+       
+      console.log(data); // Use the data as needed
+    });
   }
 }

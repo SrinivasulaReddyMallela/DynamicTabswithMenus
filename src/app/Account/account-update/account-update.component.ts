@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { account } from 'src/app/Entities/account';
-import { AccountService } from 'src/app/Services/account.service';
+import { account } from 'src/app/common/Entities/account';
+import { AccountService } from 'src/app/repository/Services/account.service';
 
 @Component({
   selector: 'app-account-update',

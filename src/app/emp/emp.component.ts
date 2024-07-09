@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Emp } from '../Entities/Emp'
-import { EmpService } from '../Services/emp.service';
+import { Emp } from '../common/Entities/Emp'
+import { EmpService } from '../repository/Services/emp.service';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-emp',
   templateUrl: './emp.component.html',
@@ -9,22 +10,27 @@ import { EmpService } from '../Services/emp.service';
 export class EmpComponent implements OnInit {
   Employees: Emp[] = [];
   selectedEmployee: any;
-  constructor(private _employeeservice: EmpService) { }
+  constructor(private _employeeservice: EmpService,private _httpClient:HttpClient) { }
   ngOnInit(): void {
     this.GetEmpolyeeData();
   }
 
   GetEmpolyeeData() {
-    this._employeeservice.GetEmpData().subscribe(
-      (empsdata) => {
+    this._httpClient.get('./assets/emp.json').subscribe((emp) => {
+      this.Employees = Object.assign([], emp);  
+      console.log(emp); // Use the data as needed
+    });
 
-        this.Employees = empsdata.data;
-        //console.log(this.Employees);
-      },
-      (logerror) => {
-        console.log(logerror);
-      }
-    );
+    // this._employeeservice.GetEmpData()  .subscribe(
+    //   (empsdata) => {
+
+    //     this.Employees = empsdata.data;
+    //     //console.log(this.Employees);
+    //   },
+    //   (logerror) => {
+    //     console.log(logerror);
+    //   }
+    // );
   }
 
   filterEmployees() {

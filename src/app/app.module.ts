@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MeterialModule } from './meterial/meterial.module';
 import { HomeComponent } from './home/home.component';
 import { LayoutComponent } from './layout/layout.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -12,15 +11,16 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
 import { HttpClientModule } from '@angular/common/http';
 import { EmpComponent } from './emp/emp.component';
 import { FormsModule } from '@angular/forms';
-import { CovidComponent } from './covid/covid.component';
+//import { CovidComponent } from './covid/covid.component';
 import { AccountCreateComponent } from './Account/account-create/account-create.component';
 import { AccountDetailsComponent } from './Account/account-details/account-details.component';
 import { AccountUpdateComponent } from './Account/account-update/account-update.component';
 import { NgHttpLoaderModule } from 'ng-http-loader';
-import { TabService } from './tab.service';
-import { TabContentComponent } from './tab-content.component';
-import { ContentContainerDirective } from './content-container.directive';
+import { TabService } from './repository/Services/tab.service';
+import { ContentContainerDirective } from './common/directives/content-container.directive';
 import { TemplateformsComponent } from './templateforms/templateforms.component';
+import { MeterialModule } from './common/meterial/meterial.module';
+import { TabContentComponent } from './common/directives/tab-content.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { TemplateformsComponent } from './templateforms/templateforms.component'
     HeaderComponent,
     SidenavListComponent,
     EmpComponent,
-    CovidComponent,
+    //CovidComponent,
     AccountCreateComponent,
     AccountDetailsComponent,
     AccountUpdateComponent,

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountDetailsComponent } from '../Account/account-details/account-details.component';
-import { CovidComponent } from '../covid/covid.component';
+//import { CovidComponent } from '../covid/covid.component';
 import { EmpComponent } from '../emp/emp.component';
 import { HomeComponent } from '../home/home.component';
-import { Tab } from '../tab.model';
-import { TabService } from '../tab.service';
+import { Tab } from '../common/Entities/tab.model';
+import { TabService } from '../repository/Services/tab.service';
 import { TemplateformsComponent } from '../templateforms/templateforms.component';
 
 @Component({
@@ -40,11 +40,11 @@ export class LayoutComponent implements OnInit {
         new Tab(EmpComponent, "Employee", { parent: "LayoutComponent" })
       );
     }
-    else if (Componentname === "covid") {
-      this.tabService.addTab(
-        new Tab(CovidComponent, "Covid Data", { parent: "LayoutComponent" })
-      );
-    }
+    // else if (Componentname === "covid") {
+    //   this.tabService.addTab(
+    //     //new Tab(CovidComponent, "Covid Data", { parent: "LayoutComponent" })
+    //   );
+    // }
     else if (Componentname === "account") {
       this.tabService.addTab(
         new Tab(AccountDetailsComponent, "Account Data", { parent: "LayoutComponent" })

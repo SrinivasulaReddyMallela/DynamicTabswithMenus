@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { account } from 'src/app/Entities/account';
-import { AccountService } from 'src/app/Services/account.service';
+import { account } from 'src/app/common/Entities/account';
+import { AccountService } from 'src/app/repository/Services/account.service';
 // import { account } from '../Entities/account';
 @Component({
   selector: 'app-account-details',
