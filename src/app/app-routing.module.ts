@@ -1,7 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountDetailsComponent } from './Account/account-details/account-details.component';
-import { CovidComponent } from './covid/covid.component';
+//import { CovidComponent } from './covid/covid.component';
 import { EmpComponent } from './emp/emp.component';
 import { HomeComponent } from './home/home.component';
 import { TemplateformsComponent } from './templateforms/templateforms.component';
@@ -18,13 +18,13 @@ const routes: Routes = [
       { path: 'emp', component: EmpComponent }
     ]
   },
-  {
-    path: 'covid',
-    children: [
-      { path: '', component: CovidComponent },
-      { path: 'covid', component: CovidComponent }
-    ]
-  },
+  // {
+  //   path: 'covid',
+  //   children: [
+  //     { path: '', component: CovidComponent },
+  //     { path: 'covid', component: CovidComponent }
+  //   ]
+  // },
   {
     path: '  templateforms',
     component: TemplateformsComponent
